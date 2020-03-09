@@ -41,6 +41,15 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
+const newLink1 = document.createElement('a');
+const newLink2 = document.createElement('a');
+
+newLink1.textContent = "Social";
+newLink2.textContent = 'Careers';
+
+const parentElement = document.querySelector('nav');
+
+parentElement.append(newLink1, newLink2);
 
 const links = document.querySelectorAll('a');
 
@@ -50,6 +59,10 @@ links[2].textContent = siteContent.nav["nav-item-3"];
 links[3].textContent = siteContent.nav["nav-item-4"];
 links[4].textContent = siteContent.nav["nav-item-5"];
 links[5].textContent = siteContent.nav["nav-item-6"];
+
+links.forEach(link => {
+  link.style.color = 'green'
+});
 
 document.querySelector(".cta-text h1").textContent = siteContent.cta['h1'];
 
