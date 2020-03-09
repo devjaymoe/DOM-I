@@ -41,16 +41,6 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 
-const newLink1 = document.createElement('a');
-const newLink2 = document.createElement('a');
-
-newLink1.textContent = "Social";
-newLink2.textContent = 'Careers';
-
-const parentElement = document.querySelector('nav');
-
-parentElement.append(newLink1, newLink2);
-
 const links = document.querySelectorAll('a');
 
 links[0].textContent = siteContent.nav["nav-item-1"];
@@ -100,5 +90,18 @@ document.querySelector('.contact p:nth-of-type(2)').textContent = siteContent['c
 
 document.querySelector('.contact p:nth-of-type(3)').textContent = siteContent['contact']['email'];
 
-document.querySelector('footer p').textContent = siteContent['footer']['copyright']
+document.querySelector('footer p').textContent = siteContent['footer']['copyright'];
 
+const newLink1 = document.createElement('a');
+const newLink2 = document.createElement('a');
+
+newLink1.textContent = "Social";
+newLink1.style.color = "green"
+newLink2.textContent = 'Careers';
+newLink2.style.color = "green"
+
+const parentElement = document.querySelector('nav');
+
+parentElement.prepend(newLink1);
+
+parentElement.appendChild(newLink2);
